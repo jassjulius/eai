@@ -1,0 +1,37 @@
+id: naidisretsept
+type: retsept
+title: "TODO: Näidisretsept"
+summary_et: TODO
+summary_en: TODO
+domains:
+  - muu
+audience:
+  - algaja
+works_with:
+  - claude
+language:
+  - et
+license: CC-BY-4.0
+maintainer:
+  name: TODO
+  contact: TODO
+last_tested: 1970-01-01
+verified: false
+example_prompt_et: TODO
+description_et: |
+  ## Eesmärk
+
+  TODO
+
+  ## Eeldused
+
+  - TODO
+
+  ## Sammud
+
+  1. TODO
+  2. TODO
+
+  ## Tulemus
+
+  TODO

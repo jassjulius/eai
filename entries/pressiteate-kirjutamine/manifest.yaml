@@ -1,0 +1,22 @@
+id: pressiteate-kirjutamine
+type: skill
+title: "TODO: Eesti pressiteate kirjutamise oskus"
+summary_et: TODO
+summary_en: TODO
+domains:
+  - meedia
+audience:
+  - praktik
+works_with:
+  - claude
+language:
+  - et
+license: TODO
+maintainer:
+  name: TODO
+  contact: TODO
+last_tested: 1970-01-01
+verified: false
+install: TODO
+example_prompt_et: TODO
+description_et: TODO

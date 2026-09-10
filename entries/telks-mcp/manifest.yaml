@@ -1,0 +1,24 @@
+id: telks-mcp
+type: mcp
+title: telks.ee telekava MCP
+summary_et: Eesti telekava MCP server (telks.ee). Ainult lugemine.
+summary_en: Estonian TV guide MCP server (telks.ee). Read only.
+domains:
+  - meedia
+audience:
+  - praktik
+  - arendaja
+works_with:
+  - any-mcp-client
+language:
+  - et
+license: MIT
+maintainer:
+  name: Jass Seljamaa
+  contact: TODO
+last_tested: 2026-09-10
+verified: true
+install: https://telks.ee/mcp
+example_prompt_et: TODO
+security_note: Ainult lugemisõigusega tööriistad (read only).
+description_et: TODO
