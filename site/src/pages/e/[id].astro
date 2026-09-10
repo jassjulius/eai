@@ -18,7 +18,8 @@ interface Props {
 const { entry } = Astro.props;
 const index = readIndex();
 const tax = index.taxonomy;
-const stale = isStale(entry.last_tested, index.stale_after_days, new Date());
+// Stale applies only to verified entries: an untested entry is 'Kontrollimata', not 'Aegunud'.
+const stale = entry.verified && isStale(entry.last_tested, index.stale_after_days, new Date());
 const descriptionHtml = entry.description_et ? await marked.parse(entry.description_et) : null;
 const skillHtml = entry.skill_md ? await marked.parse(stripFrontmatter(entry.skill_md)) : null;
 ---

@@ -30,7 +30,7 @@ Kui Git on võõras, täida GitHubis vorm „Paku uut sissekannet“. Haldaja te
 `verified: true` tähendab, et haldaja on sissekande **ise käivitanud** ja see töötas nii, nagu kirjeldatud. `last_tested` on selle päeva kuupäev.
 
 - Kui sissekande esitab keegi muu kui haldaja, jääb `verified: false` kuni haldaja on selle läbi proovinud.
-- Kui `last_tested` on üle 90 päeva vana, kuvab sait märgise „Aegunud“. Uuesti testides uuenda kuupäeva.
+- Kui kontrollitud sissekande `last_tested` on üle 90 päeva vana, kuvab sait märgise „Aegunud“. Uuesti testides uuenda kuupäeva. Kontrollimata sissekanne kannab märgist „Kontrollimata“, mitte „Aegunud“.
 - Iganädalane healthcheck kontrollib ainult seda, et `install` URL vastab. See ei asenda inimese testi ega muuda `verified` väärtust.
 
 ## Ülevaatus
@@ -48,6 +48,6 @@ Sissekannete sisu (`entries/`) avaldatakse CC BY 4.0 all, kood MIT all. Sissekan
 - Each entry is a folder under `entries/` with a `manifest.yaml` (and `SKILL.md` for skills). Folder name equals `id`.
 - Changes go through pull requests; `npm run validate` must pass locally and in CI. Non developers can use the "Paku uut sissekannet" issue form.
 - Required fields: id, type, title, summary_et, summary_en (both max 160 chars), domains, audience, works_with, language, license, maintainer, last_tested, verified. Allowed values live in `taxonomy.ts`; unknown fields are rejected.
-- `verified: true` means a maintainer actually ran the entry on `last_tested`. Third party submissions stay unverified until a maintainer tries them. Entries older than 90 days show a stale badge. The weekly healthcheck only pings install URLs.
+- `verified: true` means a maintainer actually ran the entry on `last_tested`. Third party submissions stay unverified until a maintainer tries them. Verified entries older than 90 days show a stale badge; unverified ones show an unverified badge instead. The weekly healthcheck only pings install URLs.
 - No secrets or personal data in manifests. Write `TODO` rather than guessing.
 - Content is CC BY 4.0, code is MIT. Submitting means you agree; there is no CLA.

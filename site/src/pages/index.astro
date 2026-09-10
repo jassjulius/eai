@@ -48,8 +48,10 @@ const now = new Date();
             <div class="entry-row">
               <a href={entryPath(base, e.id)}>{e.title}</a>
               <span class="badge">{label(tax, 'type', e.type)}</span>
-              {e.verified && <span class="badge badge-ok">{ui.entry.verified}</span>}
-              {isStale(e.last_tested, index.stale_after_days, now) && <span class="badge badge-warn">{ui.entry.stale}</span>}
+              {e.verified
+                ? <span class="badge badge-ok">{ui.entry.verified}</span>
+                : <span class="badge">{ui.entry.unverified}</span>}
+              {e.verified && isStale(e.last_tested, index.stale_after_days, now) && <span class="badge badge-warn">{ui.entry.stale}</span>}
             </div>
             <p class="summary">{e.summary_et}</p>
             <p class="meta">{e.domains.map((d) => label(tax, 'domain', d)).join(', ')}</p>

@@ -24,7 +24,7 @@ const index = readIndex();
     <p>Täida <a href={newEntryIssueUrl(index.repo)}>sissekande vorm</a> GitHubis. Haldaja teeb selle põhjal manifesti ise.</p>
 
     <h2>Mida tähendab „Kontrollitud“</h2>
-    <p><code>verified: true</code> tähendab, et haldaja on sissekande ise käivitanud ja see töötas. Kuupäev <code>last_tested</code> on selle testi kuupäev. Kui testist on möödas üle {index.stale_after_days} päeva, kuvatakse märgis „{ui.entry.stale}“.</p>
+    <p><code>verified: true</code> tähendab, et haldaja on sissekande ise käivitanud ja see töötas. Kuupäev <code>last_tested</code> on selle testi kuupäev. Kui kontrollitud sissekande testist on möödas üle {index.stale_after_days} päeva, kuvatakse märgis „{ui.entry.stale}“. Kontrollimata sissekandel on märgis „{ui.entry.unverified}“.</p>
 
     <h2>Litsentsid</h2>
     <p>Kood on MIT litsentsiga, sissekannete sisu kaustas <code>entries/</code> on CC BY 4.0. Sissekannet esitades nõustud, et sisu avaldatakse selle litsentsi all.</p>

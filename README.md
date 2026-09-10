@@ -56,7 +56,7 @@ docker run --rm -p 3000:3000 eai-mcp
 
 The fixed lists (type, domains, audience, works_with) live in `taxonomy.ts`. After changing them: `npm run gen-schema`, commit the schema, and update the options in `.github/ISSUE_TEMPLATE/paku-uut-sissekannet.yml` by hand.
 
-`verified: true` means a maintainer actually ran the entry on `last_tested`. Entries older than `stale_after_days` (90) show an "Aegunud" (stale) badge.
+`verified: true` means a maintainer actually ran the entry on `last_tested`. Verified entries whose test is older than `stale_after_days` (90) show an "Aegunud" (stale) badge; unverified entries show "Kontrollimata" instead.
 
 ## Repository layout
 
