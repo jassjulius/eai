@@ -19,8 +19,8 @@ license: Apache-2.0
 maintainer:
   name: Indrek Seppo (iseppo, GitHub)
   contact: TODO
-last_tested: 1970-01-01
-verified: false
+last_tested: 2026-09-10
+verified: true
 install: "claude mcp add e-arveldaja -- npx -y e-arveldaja-mcp"
 source: https://github.com/iseppo/e-arveldaja-mcp
 example_prompt_et: TODO

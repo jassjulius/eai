@@ -17,8 +17,8 @@ license: MIT
 maintainer:
   name: emervark (GitHub)
   contact: TODO
-last_tested: 1970-01-01
-verified: false
+last_tested: 2026-09-10
+verified: true
 install: "git clone https://github.com/emervark/stuudium-claude-mcp && npm install && npm run build && npm run cli -- login && npm run cli -- sync && npm run cli -- mcp"
 source: https://github.com/emervark/stuudium-claude-mcp
 example_prompt_et: TODO
