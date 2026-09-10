@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import { readIndex } from '../lib/data';
+import { fileUrl, newEntryIssueUrl, repoUrl } from '../lib/links';
+import { ui } from '../ui';
+
+const index = readIndex();
+---
+<Base title={ui.contribute.title}>
+  <article class="prose page">
+    <h1>{ui.contribute.title}</h1>
+    <p>Register on avalik Git-hoidla. Iga sissekanne on üks kaust <code>entries/&lt;id&gt;/</code>, milles on fail <code>manifest.yaml</code> ja vajadusel <code>SKILL.md</code>. Muudatused käivad läbi pull requesti.</p>
+
+    <h2>Kui oskad Giti</h2>
+    <ol>
+      <li>Tee hoidlast <a href={repoUrl(index.repo)}>fork või uus haru</a>.</li>
+      <li>Kopeeri olemasolev kaust <code>entries/</code> all uue nimega. Kausta nimi on sissekande <code>id</code> (väiketähed, sidekriipsud).</li>
+      <li>Täida <code>manifest.yaml</code>. Kohustuslikud väljad ja lubatud väärtused on kirjas failis <a href={fileUrl(index.repo, 'schema/entry.schema.json')}>schema/entry.schema.json</a>.</li>
+      <li>Käivita <code>npm run validate</code>. Vigase manifestiga PR-i ei võeta vastu, sama kontroll jookseb automaatselt ka GitHubis.</li>
+      <li>Ava pull request. Haldaja vaatab sisu üle ja proovib sissekande läbi.</li>
+    </ol>
+
+    <h2>Kui ei oska Giti</h2>
+    <p>Täida <a href={newEntryIssueUrl(index.repo)}>sissekande vorm</a> GitHubis. Haldaja teeb selle põhjal manifesti ise.</p>
+
+    <h2>Mida tähendab „Kontrollitud“</h2>
+    <p><code>verified: true</code> tähendab, et haldaja on sissekande ise käivitanud ja see töötas. Kuupäev <code>last_tested</code> on selle testi kuupäev. Kui testist on möödas üle {index.stale_after_days} päeva, kuvatakse märgis „{ui.entry.stale}“.</p>
+
+    <h2>Litsentsid</h2>
+    <p>Kood on MIT litsentsiga, sissekannete sisu kaustas <code>entries/</code> on CC BY 4.0. Sissekannet esitades nõustud, et sisu avaldatakse selle litsentsi all.</p>
+
+    <p>Täpsemad reeglid: <a href={fileUrl(index.repo, 'CONTRIBUTING.md')}>CONTRIBUTING.md</a>.</p>
+  </article>
+</Base>
