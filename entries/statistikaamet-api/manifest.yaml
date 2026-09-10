@@ -1,0 +1,24 @@
+id: statistikaamet-api
+type: dataset
+title: Statistikaameti andmebaasi API (PxWeb)
+summary_et: Statistikaameti statistika andmebaasi REST API. Metaandmed GET-iga, tabelipäringud POST JSON-iga, võtmeta, 1000 päringut 10 sekundi kohta.
+summary_en: Statistics Estonia database REST API. Metadata via GET, table queries via POST JSON, no key, 1000 calls per 10 seconds.
+domains:
+  - andmed
+audience:
+  - arendaja
+works_with:
+  - local
+language:
+  - et
+  - en
+license: CC-BY-SA-4.0
+maintainer:
+  name: Statistikaamet
+  contact: TODO
+last_tested: 1970-01-01
+verified: false
+install: https://andmed.stat.ee/api/v1/et
+source: https://andmed.stat.ee/abi/api-juhend.pdf
+example_prompt_et: TODO
+description_et: TODO

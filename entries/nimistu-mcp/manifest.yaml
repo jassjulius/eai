@@ -1,0 +1,28 @@
+id: nimistu-mcp
+type: mcp
+title: Nimistu MCP, äriregistri päringud
+summary_et: Ettevõtted, isikud, tegelikud kasusaajad, kaubamärgid, EMTAK valdkonnad ja registrimuudatused nimistu.ee koondatud avaandmetest (60+ allikat).
+summary_en: Companies, people, beneficial owners, trademarks, EMTAK sectors and register changes from nimistu.ee aggregated open data (60+ sources).
+domains:
+  - ettevotlus
+  - andmed
+audience:
+  - algaja
+  - praktik
+works_with:
+  - claude
+  - any-mcp-client
+language:
+  - et
+  - en
+license: MIT
+maintainer:
+  name: Nimistu (GitHub)
+  contact: TODO
+last_tested: 1970-01-01
+verified: false
+install: "claude mcp add --transport http nimistu https://nimistu.ee/api/mcp"
+source: https://github.com/Nimistu/nimistu-mcp
+example_prompt_et: TODO
+security_note: Ainult lugemine, avalikud andmed. Päringud lähevad kolmanda osapoole serverisse (nimistu.ee). Andmete kasutustingimused nimistu.ee/litsents.
+description_et: TODO

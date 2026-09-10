@@ -1,0 +1,26 @@
+id: lhv-mcp
+type: mcp
+title: LHV Panga MCP server (lhv.ai)
+summary_et: LHV ametlik MCP server ja REST API. Kontode loetelu, jäägid ja kontoväljavõtted tehisaru abilisele. Ainult lugemine, avalik beeta.
+summary_en: LHV Bank's official MCP server and REST API. Accounts, balances and statements for an AI assistant. Read only, public beta.
+domains:
+  - ettevotlus
+  - muu
+audience:
+  - algaja
+  - praktik
+works_with:
+  - any-mcp-client
+language:
+  - en
+license: Proprietary (LHV terms of service)
+maintainer:
+  name: AS LHV Pank
+  contact: TODO
+last_tested: 1970-01-01
+verified: false
+install: https://mcp.lhv.ai/mcp
+source: https://lhv.ai/
+example_prompt_et: TODO
+security_note: LHV enda arendatud ja hallatud teenus, kehtivad pangasaladuse reeglid. Ainult lugemine, abiline ei saa makseid teha. Sisselogimine Smart-ID, Mobiil-ID, ID-kaardi või biomeetriaga (OAuth2); ligipääsutoken kehtib 1 tund, värskendustoken 30 päeva. Tehisaru klient näeb kontojääke ja tehinguid.
+description_et: TODO

@@ -1,0 +1,24 @@
+id: estonian-grammar
+type: skill
+title: estonian-grammar (Agent Skills)
+summary_et: Oskus eesti keeles kirjutamiseks ja toimetamiseks. Allikate järjekord EKI, Sõnaveeb/ÕS, EKI teatmik; registrid ametlik, neutraalne, sõbralik, turunduslik.
+summary_en: Skill for writing and proofreading Estonian. Source order EKI, Sõnaveeb/ÕS, EKI handbook; registers formal, neutral, friendly, marketing.
+domains:
+  - keel
+audience:
+  - praktik
+works_with:
+  - claude
+  - any-mcp-client
+language:
+  - en
+license: MIT
+maintainer:
+  name: Alvar Laigna (alvarlaigna, GitHub)
+  contact: TODO
+last_tested: 1970-01-01
+verified: false
+install: https://github.com/alvarlaigna/agent-skills/tree/main/skills/estonian-grammar
+source: https://github.com/alvarlaigna/agent-skills
+example_prompt_et: TODO
+description_et: TODO

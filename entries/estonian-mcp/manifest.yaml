@@ -1,0 +1,29 @@
+id: estonian-mcp
+type: mcp
+title: estonian-mcp, eesti keele tööriistad
+summary_et: 26 eesti keele tööriista (morfoloogia, õigekiri, sünonüümid, nimeüksused, register, kantseliit) EstNLTK ja EKI reeglite põhjal. Töötab ka võrguta.
+summary_en: 26 Estonian language tools (morphology, spelling, synonyms, NER, register, officialese) built on EstNLTK and EKI rules. Runs offline too.
+domains:
+  - keel
+audience:
+  - algaja
+  - praktik
+  - arendaja
+works_with:
+  - claude
+  - chatgpt
+  - any-mcp-client
+language:
+  - en
+  - et
+license: Apache-2.0
+maintainer:
+  name: silly-geese (GitHub)
+  contact: TODO
+last_tested: 1970-01-01
+verified: false
+install: https://estonian-mcp.fly.dev/mcp
+source: https://github.com/silly-geese/estonian-mcp
+example_prompt_et: TODO
+security_note: Ainult lugemine. Avaliku serveri kasutamisel saadetakse tekst kolmanda osapoole serverisse (fly.dev); tundliku teksti puhul kasuta ise majutatud versiooni (Docker või uv).
+description_et: TODO

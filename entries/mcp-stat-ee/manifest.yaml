@@ -1,0 +1,25 @@
+id: mcp-stat-ee
+type: mcp
+title: mcp-stat-ee, Statistikaameti andmebaas
+summary_et: Statistikaameti PxWeb andmebaasi tabelite otsing, metaandmed ja päringud, sh keskmise palga otsetee. Võtmeta kaugserver.
+summary_en: "Statistics Estonia PxWeb tables: find table, metadata, query, plus an average wage shortcut. Keyless remote server."
+domains:
+  - andmed
+audience:
+  - praktik
+  - arendaja
+works_with:
+  - any-mcp-client
+language:
+  - en
+license: MIT
+maintainer:
+  name: pipeworx-io (GitHub)
+  contact: TODO
+last_tested: 1970-01-01
+verified: false
+install: https://gateway.pipeworx.io/stat-ee/mcp
+source: https://github.com/pipeworx-io/mcp-stat-ee
+example_prompt_et: TODO
+security_note: Ainult lugemine. Päringud lähevad kolmanda osapoole Pipeworx gateway kaudu, mis lisab ka umbes 30 üldist metatööriista.
+description_et: TODO

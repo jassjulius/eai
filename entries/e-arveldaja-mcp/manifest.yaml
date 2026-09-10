@@ -1,0 +1,28 @@
+id: e-arveldaja-mcp
+type: mcp
+title: e-arveldaja MCP server
+summary_et: Mitteametlik MCP server RIK e-arveldaja raamatupidamise API-le. 127 tööriista, 16 töövoo prompti, 15 ressurssi. Kirjutav.
+summary_en: Unofficial MCP server for the RIK e-arveldaja (e-Financials) accounting API. 127 tools, 16 workflow prompts, 15 resources. Writes data.
+domains:
+  - raamatupidamine
+  - ettevotlus
+audience:
+  - praktik
+  - arendaja
+works_with:
+  - claude
+  - cursor
+  - any-mcp-client
+language:
+  - en
+license: Apache-2.0
+maintainer:
+  name: Indrek Seppo (iseppo, GitHub)
+  contact: TODO
+last_tested: 1970-01-01
+verified: false
+install: "claude mcp add e-arveldaja -- npx -y e-arveldaja-mcp"
+source: https://github.com/iseppo/e-arveldaja-mcp
+example_prompt_et: TODO
+security_note: Eksperimentaalne ja mitteametlik, RIKiga seotud pole. Töötab päris finantsandmetega ning loob, muudab, kinnitab ja kustutab raamatupidamiskirjeid. Vajab e-arveldaja API võtit (apikey.txt) IP-piiranguga; autor soovitab kõigepealt testida demoserveris (EARVELDAJA_SERVER=demo). README hoiatab versiooni 0.22.0 veast, mis kandis laekumised vastupidises suunas.
+description_et: TODO

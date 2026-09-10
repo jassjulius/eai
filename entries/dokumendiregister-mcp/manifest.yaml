@@ -1,0 +1,27 @@
+id: dokumendiregister-mcp
+type: mcp
+title: Dokumendiregister MCP
+summary_et: Üks otsing üle kõigi avaliku sektori asutuste dokumendiregistrite, failide tekstid, dokumendid ettevõtte kohta. ChatGPT-ga ühilduvad search ja fetch.
+summary_en: One search across all Estonian public authority document registers, extracted file text, documents by company. ChatGPT compatible search and fetch.
+domains:
+  - avalik-sektor
+  - andmed
+audience:
+  - praktik
+works_with:
+  - claude
+  - chatgpt
+  - any-mcp-client
+language:
+  - et
+license: MIT
+maintainer:
+  name: Nimistu (GitHub)
+  contact: TODO
+last_tested: 1970-01-01
+verified: false
+install: https://dokumendiregister.ee/api/dokreg-mcp/mcp
+source: https://github.com/Nimistu/dokumendiregister-mcp
+example_prompt_et: TODO
+security_note: Ainult lugemine, avalikud andmed. Päringud lähevad kolmanda osapoole serverisse (dokumendiregister.ee).
+description_et: TODO

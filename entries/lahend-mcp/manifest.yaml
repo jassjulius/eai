@@ -1,0 +1,25 @@
+id: lahend-mcp
+type: mcp
+title: Lahend MCP, kohtulahendid ja seadused
+summary_et: Täistekstiotsing Eesti kohtulahendites ja kehtivates õigusaktides paragrahvi täpsusega, viitegraaf lahendite ja sätete vahel, EL õiguse ristviited.
+summary_en: Full text search of Estonian court decisions and in force acts by paragraph, ruling to section citation graph, EU law cross references.
+domains:
+  - oigus
+audience:
+  - praktik
+works_with:
+  - claude
+  - any-mcp-client
+language:
+  - et
+license: MIT
+maintainer:
+  name: Nimistu (GitHub)
+  contact: TODO
+last_tested: 1970-01-01
+verified: false
+install: https://lahend.ee/api/lahend-mcp/mcp
+source: https://github.com/Nimistu/lahend-mcp
+example_prompt_et: TODO
+security_note: Ainult lugemine, avalikud andmed. Päringud lähevad kolmanda osapoole serverisse (lahend.ee).
+description_et: TODO

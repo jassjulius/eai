@@ -1,0 +1,25 @@
+id: estonian-writing-assistant
+type: skill
+title: estonian-writing-assistant
+summary_et: Oskus eestikeelse teksti toimetamiseks (õigekiri, register, kantseliit, terminite ühtlus) estonian-mcp tööriistade abil. Reegel, et vorme ei mõelda välja.
+summary_en: Skill for editing Estonian text (proofreading, register, officialese, term consistency) using the estonian-mcp tools. Never invents inflections.
+domains:
+  - keel
+audience:
+  - praktik
+works_with:
+  - claude
+  - any-mcp-client
+language:
+  - en
+license: Apache-2.0
+maintainer:
+  name: silly-geese (GitHub)
+  contact: TODO
+last_tested: 1970-01-01
+verified: false
+install: https://github.com/silly-geese/estonian-mcp/blob/main/skills/estonian-writing-assistant/SKILL.md
+source: https://github.com/silly-geese/estonian-mcp
+example_prompt_et: TODO
+security_note: Eeldab ühendatud estonian-mcp serverit; vt selle sissekande turvamärkust.
+description_et: TODO

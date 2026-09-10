@@ -1,0 +1,27 @@
+id: asjaajaja
+type: skill
+title: Asjaajaja, Eesti asjaajamise oskused
+summary_et: Kuus oskust Eesti asjaajamiseks (raamatupidaja, maksunõustaja, maksurevident, audiitor, notar, korteriühistu) koos ametlike allikate loendiga.
+summary_en: Six skills for Estonian bureaucracy (accountant, tax adviser, tax auditor, auditor, notary, apartment association) with a list of official sources.
+domains:
+  - raamatupidamine
+  - oigus
+  - ettevotlus
+audience:
+  - praktik
+works_with:
+  - claude
+  - cursor
+  - any-mcp-client
+language:
+  - en
+license: MIT
+maintainer:
+  name: Lars Eckart (LarsEckart, GitHub)
+  contact: TODO
+last_tested: 1970-01-01
+verified: false
+install: https://github.com/LarsEckart/asjaajaja
+source: https://github.com/LarsEckart/asjaajaja
+example_prompt_et: TODO
+description_et: TODO

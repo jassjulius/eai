@@ -1,0 +1,25 @@
+id: riigi-teataja-api
+type: dataset
+title: Riigi Teataja avaandmed ja otsingu API
+summary_et: Kõik alates 2010 avaldatud õigusaktid XML-ina (aastapakid) ning võtmeta JSON otsinguliides kehtivate aktide leidmiseks.
+summary_en: All acts published since 2010 as XML (yearly bundles) plus a keyless JSON search endpoint for acts in force.
+domains:
+  - oigus
+  - andmed
+audience:
+  - arendaja
+works_with:
+  - local
+language:
+  - et
+license: TODO
+maintainer:
+  name: Riigi Teataja (Justiits- ja Digiministeerium)
+  contact: TODO
+last_tested: 1970-01-01
+verified: false
+install: https://www.riigiteataja.ee/api/oigusakt_otsing/1/otsi
+source: https://www.riigiteataja.ee/avaandmed/ERT/
+example_prompt_et: TODO
+security_note: Avalikud andmed, autentimist ei ole. Täielik 2026. aasta XML-pakk on ligikaudu 43 GB.
+description_et: TODO

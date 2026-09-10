@@ -1,0 +1,26 @@
+id: estonia-skills
+type: skill
+title: estonia-skills, kodaniku toimingud
+summary_et: Üheksa oskust Eesti kodaniku toiminguteks (tuludeklaratsioon, OÜ asutamine, elukoha registreerimine, juhiluba, vanemahüvitis, Töötukassa jt).
+summary_en: Nine skills for Estonian citizen procedures (tax filing, founding an OÜ, residence registration, driving licence, parental benefit, Töötukassa and more).
+domains:
+  - avalik-sektor
+  - muu
+audience:
+  - algaja
+  - praktik
+works_with:
+  - claude
+language:
+  - en
+license: MIT
+maintainer:
+  name: dmihhailov (GitHub)
+  contact: TODO
+last_tested: 1970-01-01
+verified: false
+install: https://github.com/dmihhailov/estonia-skills
+source: https://github.com/dmihhailov/estonia-skills
+example_prompt_et: TODO
+security_note: Oskused juhendavad mudelit ametlikke allikaid uuesti kontrollima ega tee eID-autentimist kasutaja eest.
+description_et: TODO

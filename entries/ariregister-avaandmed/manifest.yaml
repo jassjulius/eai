@@ -1,0 +1,27 @@
+id: ariregister-avaandmed
+type: dataset
+title: e-Äriregistri avaandmed
+summary_et: RIKi äriregistri avaandmed. Iga päev uuenevad failid ettevõtete üld- ja registrikaardi andmete, isikute, osanike, kasusaajate ja majandusaasta aruannete kohta.
+summary_en: Business register open data from RIK. Daily updated files on companies, registry cards, persons, shareholders, beneficial owners and annual reports.
+domains:
+  - ettevotlus
+  - andmed
+audience:
+  - praktik
+  - arendaja
+works_with:
+  - local
+language:
+  - et
+  - en
+license: CC-BY-4.0
+maintainer:
+  name: Registrite ja Infosüsteemide Keskus (RIK)
+  contact: TODO
+last_tested: 1970-01-01
+verified: false
+install: https://avaandmed.ariregister.rik.ee/en
+source: https://avaandmed.ariregister.rik.ee/en
+example_prompt_et: TODO
+security_note: Hulgifailid (CSV, XML, JSON, Parquet) ilma autentimiseta. Alates 1.11.2024 ei sisalda avaandmed isikukoode. XML-päringuteenus vajab lepingut ja kasutajakontot.
+description_et: TODO

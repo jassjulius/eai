@@ -1,0 +1,27 @@
+id: selver-mcp
+type: mcp
+title: Selver MCP
+summary_et: MCP server Selver.ee e-poele. Tooteotsing, ostukorv, sooduspakkumised, tarneaegade valik, Smart-ID sisselogimine.
+summary_en: MCP server for the Selver.ee grocery store. Product search, cart, deals, delivery slots, Smart-ID login.
+domains:
+  - muu
+audience:
+  - arendaja
+works_with:
+  - claude
+  - chatgpt
+  - any-mcp-client
+language:
+  - en
+  - et
+license: MIT
+maintainer:
+  name: vibenya (GitHub)
+  contact: TODO
+last_tested: 1970-01-01
+verified: false
+install: "git clone https://github.com/vibenya/selver-mcp && cd selver-mcp/mcp-server && bun install"
+source: https://github.com/vibenya/selver-mcp
+example_prompt_et: Lisa ostukorvi 2 kg kartuleid ja piim.
+security_note: Vajab Bun'i, Playwrighti ja isikukoodi .env failis; sisselogimine Smart-ID-ga. Kirjutav server. Lisab tooteid ostukorvi, broneerib tarneaegu ja saab vormistada tellimuse.
+description_et: TODO

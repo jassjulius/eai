@@ -1,0 +1,24 @@
+id: grocery-manager
+type: skill
+title: grocery-manager (Claude Code oskus)
+summary_et: Claude Code oskus kodu toiduvarude haldamiseks. Sahvri seis, pere profiil, ostuajalugu PDF-tšekkidest, eelistused. Töötab koos Selver MCP-ga.
+summary_en: Claude Code skill for household groceries. Pantry, family profile, purchase history from PDF receipts, preferences. Pairs with Selver MCP.
+domains:
+  - muu
+audience:
+  - praktik
+works_with:
+  - claude
+language:
+  - en
+license: MIT
+maintainer:
+  name: vibenya (GitHub)
+  contact: TODO
+last_tested: 1970-01-01
+verified: false
+install: "claude install-skill vibenya/grocery-manager"
+source: https://github.com/vibenya/grocery-manager
+example_prompt_et: TODO
+security_note: Salvestab pere andmed (liikmed, allergiad, eelarve, ostuajalugu) kohalikku SQLite faili. PDF-tšekkide lugemiseks vajab Python paketti pdfplumber.
+description_et: TODO
