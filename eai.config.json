@@ -1,0 +1,7 @@
+{
+  "name": "EAI",
+  "description_et": "Eesti tehisaru teadmiste digiraamatukogu: oskused, MCP serverid, promptid, andmestikud ja retseptid.",
+  "repo": { "owner": "jassjulius", "name": "eai", "branch": "main" },
+  "site": { "url": "https://jassjulius.github.io", "base": "/eai" },
+  "stale_after_days": 90
+}

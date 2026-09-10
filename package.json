@@ -1,0 +1,35 @@
+{
+  "name": "eai",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Curated, machine readable registry of Estonia specific AI knowledge (skills, MCP servers, prompts, datasets, recipes).",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "workspaces": [
+    "site",
+    "mcp"
+  ],
+  "scripts": {
+    "gen-schema": "tsx scripts/gen-schema.ts",
+    "validate": "tsx scripts/validate.ts",
+    "build:index": "tsx scripts/build-index.ts",
+    "healthcheck": "tsx scripts/healthcheck.ts",
+    "test": "tsx --test scripts/*.test.ts site/src/lib/*.test.ts mcp/src/*.test.ts",
+    "dev": "npm run build:index && npm run dev -w site",
+    "build:site": "npm run build:index && npm run build -w site",
+    "build:mcp": "npm run build -w mcp",
+    "build": "npm run validate && npm run build:site && npm run build:mcp",
+    "preview": "npm run preview -w site"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.2",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2",
+    "yaml": "^2.9.0"
+  }
+}
