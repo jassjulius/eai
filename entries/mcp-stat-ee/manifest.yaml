@@ -16,10 +16,10 @@ license: MIT
 maintainer:
   name: pipeworx-io (GitHub)
   contact: TODO
-last_tested: 1970-01-01
-verified: false
+last_tested: 2026-09-10
+verified: true
 install: https://gateway.pipeworx.io/stat-ee/mcp
 source: https://github.com/pipeworx-io/mcp-stat-ee
 example_prompt_et: TODO
-security_note: Ainult lugemine. Päringud lähevad kolmanda osapoole Pipeworx gateway kaudu, mis lisab ka umbes 30 üldist metatööriista.
+security_note: Ainult lugemine. Päringud lähevad kolmanda osapoole Pipeworx gateway kaudu. Server pakub 36 tööriista, millest ainult 5 on Statistikaameti omad (stat_ee_find_table, estonia_average_wage, subjects, table_meta, query_table); ülejäänud on Pipeworxi üldised tööriistad, sh kihlveo- ja ennustusturgude tööriistad.
 description_et: TODO

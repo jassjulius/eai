@@ -22,5 +22,5 @@ verified: false
 install: https://mcp.lhv.ai/mcp
 source: https://lhv.ai/
 example_prompt_et: TODO
-security_note: LHV enda arendatud ja hallatud teenus, kehtivad pangasaladuse reeglid. Ainult lugemine, abiline ei saa makseid teha. Sisselogimine Smart-ID, Mobiil-ID, ID-kaardi või biomeetriaga (OAuth2); ligipääsutoken kehtib 1 tund, värskendustoken 30 päeva. Tehisaru klient näeb kontojääke ja tehinguid.
+security_note: LHV enda arendatud ja hallatud teenus, kehtivad pangasaladuse reeglid. Ainult lugemine (OAuth skoobid accounts:read ja transactions:read), abiline ei saa makseid teha. Sisselogimine Smart-ID, Mobiil-ID, ID-kaardi või biomeetriaga (OAuth2); ligipääsutoken kehtib 1 tund, värskendustoken 30 päeva. Tehisaru klient näeb kontojääke ja tehinguid.
 description_et: TODO

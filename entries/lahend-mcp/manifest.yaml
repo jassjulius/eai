@@ -16,8 +16,8 @@ license: MIT
 maintainer:
   name: Nimistu (GitHub)
   contact: TODO
-last_tested: 1970-01-01
-verified: false
+last_tested: 2026-09-10
+verified: true
 install: https://lahend.ee/api/lahend-mcp/mcp
 source: https://github.com/Nimistu/lahend-mcp
 example_prompt_et: TODO
