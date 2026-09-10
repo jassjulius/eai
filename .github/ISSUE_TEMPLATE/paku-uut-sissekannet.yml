@@ -1,0 +1,112 @@
+# Options below mirror taxonomy.ts. Update them by hand when the taxonomy changes.
+name: Paku uut sissekannet
+description: Paku registrisse uut oskust, MCP serverit, prompti, andmestikku või retsepti. Haldaja teeb selle põhjal manifesti.
+title: "[uus] "
+labels: ["uus-sissekanne"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Täida nii palju kui tead. Väljad vastavad failile `manifest.yaml`. Esitades nõustud, et sisu avaldatakse CC BY 4.0 litsentsi all.
+  - type: input
+    id: title
+    attributes:
+      label: Pealkiri (title)
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Tüüp (type)
+      options:
+        - skill (oskus)
+        - mcp (MCP server)
+        - prompt
+        - dataset (andmestik või API)
+        - retsept (töövoo retsept)
+    validations:
+      required: true
+  - type: textarea
+    id: summary_et
+    attributes:
+      label: Kokkuvõte eesti keeles (summary_et, kuni 160 tähemärki)
+    validations:
+      required: true
+  - type: textarea
+    id: summary_en
+    attributes:
+      label: Kokkuvõte inglise keeles (summary_en, kuni 160 tähemärki)
+    validations:
+      required: true
+  - type: checkboxes
+    id: domains
+    attributes:
+      label: Valdkonnad (domains)
+      options:
+        - label: oigus (õigus)
+        - label: raamatupidamine
+        - label: avalik-sektor
+        - label: meedia
+        - label: haridus
+        - label: ettevotlus (ettevõtlus)
+        - label: pollumajandus (põllumajandus)
+        - label: keel
+        - label: andmed
+        - label: muu
+  - type: checkboxes
+    id: audience
+    attributes:
+      label: Sihtrühm (audience)
+      options:
+        - label: algaja
+        - label: praktik
+        - label: arendaja
+  - type: checkboxes
+    id: works_with
+    attributes:
+      label: Töötab koos (works_with)
+      options:
+        - label: claude
+        - label: chatgpt
+        - label: copilot
+        - label: cursor
+        - label: any-mcp-client (iga MCP klient)
+        - label: local (kohalik)
+  - type: input
+    id: language
+    attributes:
+      label: Keeled (language, ISO koodid komadega, nt et, en)
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: Litsents (license, nt MIT, CC-BY-4.0)
+    validations:
+      required: true
+  - type: input
+    id: install
+    attributes:
+      label: Paigaldamine (install, URL või käsk)
+  - type: input
+    id: source
+    attributes:
+      label: Lähtekood (source, hoidla URL)
+  - type: input
+    id: maintainer
+    attributes:
+      label: Haldaja (maintainer, nimi ja kontakt)
+    validations:
+      required: true
+  - type: textarea
+    id: example_prompt_et
+    attributes:
+      label: Näidisprompt eesti keeles (example_prompt_et)
+  - type: textarea
+    id: security_note
+    attributes:
+      label: Turvamärkus (security_note)
+  - type: textarea
+    id: description_et
+    attributes:
+      label: Pikem kirjeldus eesti keeles (description_et, Markdown)

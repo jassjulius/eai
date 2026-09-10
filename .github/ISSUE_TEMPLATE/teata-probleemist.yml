@@ -1,0 +1,28 @@
+name: Teata probleemist
+description: Sissekanne ei tööta, on aegunud või sisaldab vea.
+labels: ["probleem"]
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: Sissekande id
+      description: Kausta nimi entries/ all, nt telks-mcp. Täidetakse automaatselt, kui tulid sissekande lehelt.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Mis on valesti?
+      description: Mida proovisid, mida ootasid, mis juhtus.
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Probleemi liik
+      options:
+        - Ei tööta
+        - Aegunud või muutunud
+        - Vale või puuduv info
+        - Turvaprobleem
+        - Muu

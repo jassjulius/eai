@@ -1,0 +1,46 @@
+name: Healthcheck
+on:
+  schedule:
+    - cron: '0 6 * * 1' # Mondays 06:00 UTC
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  healthcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Ping install URLs
+        id: ping
+        run: |
+          set +e
+          npm run -s healthcheck > report.md
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          cat report.md
+      - name: Open, update or close the single healthcheck issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          CODE: ${{ steps.ping.outputs.code }}
+        run: |
+          set -euo pipefail
+          gh label create healthcheck --description "Automated install URL check" --color D93F0B --force
+          existing=$(gh issue list --label healthcheck --state open --json number --jq '.[0].number // empty')
+          if [ "$CODE" != "0" ]; then
+            if [ -n "$existing" ]; then
+              gh issue edit "$existing" --body-file report.md
+              echo "updated issue #$existing"
+            else
+              gh issue create --title "Healthcheck: katkised paigalduslingid" --label healthcheck --body-file report.md
+            fi
+          elif [ -n "$existing" ]; then
+            gh issue close "$existing" --comment "Kõik paigalduslingid vastavad jälle. Suletud automaatselt."
+          else
+            echo "all install URLs reachable, nothing to do"
+          fi
