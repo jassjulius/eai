@@ -1,0 +1,119 @@
+---
+import { marked } from 'marked';
+import Badges from '../../components/Badges.astro';
+import Base from '../../layouts/Base.astro';
+import { label, readIndex, type Entry } from '../../lib/data';
+import { editManifestUrl, reportIssueUrl } from '../../lib/links';
+import { stripFrontmatter } from '../../lib/markdown';
+import { isStale } from '../../lib/stale';
+import { ui } from '../../ui';
+
+export function getStaticPaths() {
+  return readIndex().entries.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+
+interface Props {
+  entry: Entry;
+}
+const { entry } = Astro.props;
+const index = readIndex();
+const tax = index.taxonomy;
+const stale = isStale(entry.last_tested, index.stale_after_days, new Date());
+const descriptionHtml = entry.description_et ? await marked.parse(entry.description_et) : null;
+const skillHtml = entry.skill_md ? await marked.parse(stripFrontmatter(entry.skill_md)) : null;
+---
+<Base title={entry.title} description={entry.summary_et}>
+  <article class="entry" data-pagefind-body>
+    <header class="entry-header">
+      <p class="kicker">{label(tax, 'type', entry.type)}</p>
+      <h1>{entry.title}</h1>
+      <p class="summary">{entry.summary_et}</p>
+      <p class="summary-en" lang="en">{entry.summary_en}</p>
+      <div class="badge-row">
+        {entry.verified
+          ? <span class="badge badge-ok">{ui.entry.verified}</span>
+          : <span class="badge">{ui.entry.unverified}</span>}
+        {stale && <span class="badge badge-warn" title={ui.entry.staleHelp(index.stale_after_days)}>{ui.entry.stale}</span>}
+      </div>
+    </header>
+
+    <section class="trust" aria-labelledby="trust-h">
+      <h2 id="trust-h">{ui.entry.trust}</h2>
+      <dl>
+        <dt>{ui.entry.maintainer}</dt>
+        <dd>{entry.maintainer.name} · {entry.maintainer.contact}</dd>
+        <dt>{ui.entry.lastTested}</dt>
+        <dd>
+          <time datetime={entry.last_tested}>{entry.last_tested}</time>
+          {stale && <span class="badge badge-warn">{ui.entry.stale}</span>}
+        </dd>
+        <dt>{ui.entry.license}</dt>
+        <dd>{entry.license}</dd>
+        <dt>{ui.entry.languages}</dt>
+        <dd>{entry.language.join(', ')}</dd>
+        {entry.security_note && <dt>{ui.entry.securityNote}</dt>}
+        {entry.security_note && <dd>{entry.security_note}</dd>}
+      </dl>
+      <Badges facet="domain" title={ui.facets.domain} items={entry.domains} />
+      <Badges facet="audience" title={ui.facets.audience} items={entry.audience} />
+      <Badges facet="works_with" title={ui.facets.works_with} items={entry.works_with} />
+    </section>
+
+    {entry.install && (
+      <section aria-labelledby="install-h">
+        <h2 id="install-h">{ui.entry.install}</h2>
+        <div class="copyable">
+          <code>{entry.install}</code>
+          <button type="button" class="copy" data-copy={entry.install} data-copied={ui.entry.copied}>{ui.entry.copy}</button>
+        </div>
+      </section>
+    )}
+
+    {entry.example_prompt_et && (
+      <section aria-labelledby="prompt-h">
+        <h2 id="prompt-h">{ui.entry.examplePrompt}</h2>
+        <div class="copyable">
+          <pre>{entry.example_prompt_et}</pre>
+          <button type="button" class="copy" data-copy={entry.example_prompt_et} data-copied={ui.entry.copied}>{ui.entry.copy}</button>
+        </div>
+      </section>
+    )}
+
+    {descriptionHtml && (
+      <section aria-labelledby="desc-h">
+        <h2 id="desc-h">{ui.entry.description}</h2>
+        <div class="prose" set:html={descriptionHtml}></div>
+      </section>
+    )}
+
+    {skillHtml && (
+      <section aria-labelledby="skill-h">
+        <h2 id="skill-h">SKILL.md</h2>
+        <div class="prose" set:html={skillHtml}></div>
+      </section>
+    )}
+
+    <footer class="entry-links" data-pagefind-ignore>
+      <ul>
+        {entry.source && <li><a href={entry.source} rel="external">{ui.entry.source}</a></li>}
+        <li><a href={editManifestUrl(index.repo, entry.id)} rel="external">{ui.entry.edit}</a></li>
+        <li><a href={reportIssueUrl(index.repo, entry.id)} rel="external">{ui.entry.report}</a></li>
+      </ul>
+    </footer>
+  </article>
+
+  <script>
+    for (const btn of document.querySelectorAll<HTMLButtonElement>('button.copy')) {
+      btn.addEventListener('click', async () => {
+        const original = btn.textContent;
+        try {
+          await navigator.clipboard.writeText(btn.dataset.copy ?? '');
+          btn.textContent = btn.dataset.copied ?? original;
+        } catch {
+          btn.textContent = '✕';
+        }
+        setTimeout(() => { btn.textContent = original; }, 1500);
+      });
+    }
+  </script>
+</Base>
