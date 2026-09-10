@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+import { readIndex } from '../lib/data';
+import { repoUrl, withSlash } from '../lib/links';
+import { ui } from '../ui';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description } = Astro.props;
+const index = readIndex();
+const base = withSlash(import.meta.env.BASE_URL);
+---
+<!doctype html>
+<html lang="et">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · {index.name}</title>
+    <meta name="description" content={description ?? index.description_et} />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href={base}>{index.name}</a>
+      <nav aria-label="Peamenüü">
+        <a href={base}>{ui.nav.search}</a>
+        <a href={`${base}panusta/`}>{ui.nav.contribute}</a>
+        <a href={`${base}meist/`}>{ui.nav.about}</a>
+        <a href={repoUrl(index.repo)} rel="external">GitHub</a>
+      </nav>
+    </header>
+    <main class="container">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>{ui.footer.code} · {ui.footer.content} · <a href={`${base}index.json`}>index.json</a></p>
+    </footer>
+  </body>
+</html>

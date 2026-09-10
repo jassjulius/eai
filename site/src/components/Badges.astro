@@ -1,0 +1,17 @@
+---
+import { label, readIndex, type Facet } from '../lib/data';
+
+interface Props {
+  facet: Facet;
+  items: string[];
+  title: string;
+}
+const { facet, items, title } = Astro.props;
+const tax = readIndex().taxonomy;
+---
+<div class="badge-group">
+  <span class="badge-group-title">{title}</span>
+  <ul class="badges">
+    {items.map((v) => <li class="badge">{label(tax, facet, v)}</li>)}
+  </ul>
+</div>
