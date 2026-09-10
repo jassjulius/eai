@@ -1,0 +1,167 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "entry.schema.json",
+  "title": "EAI entry manifest",
+  "description": "One registry entry. Generated from taxonomy.ts by scripts/gen-schema.ts. Do not edit by hand.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "type",
+    "title",
+    "summary_et",
+    "summary_en",
+    "domains",
+    "audience",
+    "works_with",
+    "language",
+    "license",
+    "maintainer",
+    "last_tested",
+    "verified"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Kebab case, must equal the folder name."
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "skill",
+        "mcp",
+        "prompt",
+        "dataset",
+        "retsept"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary_et": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "summary_en": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "domains": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "oigus",
+          "raamatupidamine",
+          "avalik-sektor",
+          "meedia",
+          "haridus",
+          "ettevotlus",
+          "pollumajandus",
+          "keel",
+          "andmed",
+          "muu"
+        ]
+      }
+    },
+    "audience": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "algaja",
+          "praktik",
+          "arendaja"
+        ]
+      }
+    },
+    "works_with": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "claude",
+          "chatgpt",
+          "copilot",
+          "cursor",
+          "any-mcp-client",
+          "local"
+        ]
+      }
+    },
+    "language": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+        "description": "ISO 639 language code, optionally with region (e.g. et, en, en-GB)."
+      }
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1
+    },
+    "maintainer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "contact"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "contact": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "last_tested": {
+      "type": "string",
+      "format": "date",
+      "description": "ISO date (YYYY-MM-DD) when a maintainer last ran this entry."
+    },
+    "verified": {
+      "type": "boolean",
+      "description": "True only if a maintainer actually ran it."
+    },
+    "install": {
+      "type": "string",
+      "minLength": 1,
+      "description": "URL or command to install or connect."
+    },
+    "source": {
+      "type": "string",
+      "format": "uri",
+      "description": "Source repository URL."
+    },
+    "example_prompt_et": {
+      "type": "string",
+      "minLength": 1
+    },
+    "security_note": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description_et": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Longer Markdown description in Estonian."
+    }
+  }
+}
